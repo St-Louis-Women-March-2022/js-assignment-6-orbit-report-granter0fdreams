@@ -6,7 +6,7 @@
         <th>Orbit Type</th>
         <th>Launch Date</th>
     </tr>
-    <tr class="data-row" *ngFor="let satellite of satellites" [class.stripe] = "(satellites.length/satellite % 2) === 0">
+    <tr class="data-row" *ngFor="let satellite of satellites; let i = index" [class.stripe] = "(satellites.length/index % 2) === 0">
         <!--stripe does not work-->
         <td>{{satellite.name}}</td>
         <td [class.warning] = "satellite.isSpaceDebris()">{{satellite.type}}</td>
